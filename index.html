@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Single File Demo</title>
+    <meta charset="UTF-8">
+
+    <style>
+        body {
+            background-color: #f4f6f8;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 320px;
+            margin: 120px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+
+        button {
+            width: 95%;
+            padding: 10px;
+            margin-top: 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        #output {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Simulating Python Function</h2>
+
+    <input id="a" type="number" placeholder="Number A">
+    <input id="b" type="number" placeholder="Number B">
+
+    <button onclick="runFunction()">Run Function</button>
+
+    <p id="output"></p>
+</div>
+
+<script>
+    // Python-like function written in JavaScript
+    function pythonLikeFunction(a, b) {
+        return a + b;
+    }
+
+    function runFunction() {
+        const a = Number(document.getElementById("a").value);
+        const b = Number(document.getElementById("b").value);
+
+        if (isNaN(a) || isNaN(b)) {
+            document.getElementById("output").innerText =
+                "Please enter valid numbers";
+            return;
+        }
+
+        const result = pythonLikeFunction(a, b);
+
+        document.getElementById("output").innerText =
+            "Result: " + result;
+    }
+</script>
+
+</body>
+</html>
